@@ -15,6 +15,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if ($request->user() and $request->user()->is_admin)
+            return $next($request);
+        return redirect()->route('dashboard')->with('error', 'Voce não tem permissão para acessar esta página.');
+    
     }
 }
