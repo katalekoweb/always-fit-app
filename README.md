@@ -80,6 +80,6 @@ Cliente - username:client@client.com, senha: password
 ## My email: juliofeli78@gmail.com
 ## Linkedin: https://www.linkedin.com/in/juliaokataleko/
 
-![Dashboard](https://raw.githubusercontent.com/katalekoweb/always-fit-app/refs/heads/main/public/assets/images/show1.png?token=GHSAT0AAAAAADIMY3MTRAHBNU2LBWLQQSRK2FIZLHA)
-![Login](https://raw.githubusercontent.com/katalekoweb/always-fit-app/refs/heads/main/public/assets/images/show2.png?token=GHSAT0AAAAAADIMY3MTLUXP2JDCVMXRAB5K2FIZMMA)
-![Página de Treinos](https://raw.githubusercontent.com/katalekoweb/always-fit-app/refs/heads/main/public/assets/images/show5.png?token=GHSAT0AAAAAADIMY3MSSQVSHVQ36ZVW6RQ62FIZNJA)
+![Dashboard](https://raw.githubusercontent.com/katalekoweb/always-fit-app/refs/heads/main/public/assets/images/show1.png)
+![Login](https://raw.githubusercontent.com/katalekoweb/always-fit-app/refs/heads/main/public/assets/images/show2.png)
+![Página de Treinos](https://raw.githubusercontent.com/katalekoweb/always-fit-app/refs/heads/main/public/assets/images/show5.png)
