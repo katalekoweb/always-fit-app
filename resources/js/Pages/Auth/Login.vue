@@ -37,6 +37,8 @@ const submit = () => {
             {{ status }}
         </div>
 
+        <div class="font-bold text-3xl text-center">Login</div>
+
         <div class="text-md font-bold mt-4">
             Olá
         </div>
