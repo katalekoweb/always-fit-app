@@ -1,6 +1,7 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Footer from '@/Components/Footer.vue';
+import WhatsappIcon from '@/Components/Icons/WhatsappIcon.vue';
 
 import { Link } from '@inertiajs/vue3';
 </script>
@@ -8,12 +9,15 @@ import { Link } from '@inertiajs/vue3';
 <template>
     <div class="flex min-h-screen flex-col">
 
-        <div class="h-12 bg-brand-charade-600 flex items-center">
-            <div class="container mx-auto flex items-center justify-between text-white h-12">
-                <div class="text-md">
+        <div class="md:h-12 bg-brand-charade-600 flex items-center">
+            <div class="container mx-auto flex flex-col space-y-2 md:space-y-0 md:flex-row items-center justify-between text-white md:h-12">
+                <div class="text-md p-2 px-4">
                     Havendo qualquer dúvida, entre em contato com nosso SAC <span class="font-bold">(17) 9 9126-6117</span>.
                 </div>
-                <div class=" bg-brand-jade-500 h-full flex items-center px-5"> SAC pelo Whatsapp</div>
+                <div class=" py-2 md:py-0 block md:flex bg-brand-jade-500 h-full flex items-center px-5 space-x-3"> 
+                    <WhatsappIcon class="text-xl" />
+                    <span>SAC pelo Whatsapp</span>
+                </div>
             </div>
         </div>
 
