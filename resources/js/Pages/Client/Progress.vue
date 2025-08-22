@@ -38,8 +38,14 @@ const deleteRecord = (id) => {
         <div class="py-12">
             <div class="container px-4 md:px-10">
 
+                <div class="text-3xl text-brand-nile-blue-400 font-bold text-center mb-8">Progresso dos seus treinos</div>
+
+                <div class="bg-sky-200 rounded-lg p-4 mb-8">
+                    A chave para a evolução está na consistência! Mantenha sua rotina, aumente a carga progressivamente e respeite os dias de descanso para melhores resultados.
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    <div v-for="(train, index) in trains" :key="index" class="shadow-md rounded-lg bg-white p-5 space-y-4">
+                    <div v-for="(train, index) in trains" :key="index" class="shadow-md rounded-lg bg-white p-5 space-y-4 text-gray-600">
                         <div class="text-gray-600 font-bold text-xl">{{ train.name }}</div>
 
                         <div v-html="train.description"></div>
