@@ -51,4 +51,8 @@ class User extends Authenticatable
     public function trains (): HasMany {
         return $this->hasMany(Train::class);
     }
+
+    public function meals (): HasMany {
+        return $this->hasMany(Meal::class);
+    }
 }

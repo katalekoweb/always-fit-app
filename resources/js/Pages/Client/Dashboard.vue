@@ -1,6 +1,13 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
+
+const props = defineProps({
+    stats: {
+        type: Object,
+        default: () => ({})
+    }
+});
 </script>
 
 <template>
@@ -44,17 +51,17 @@ import { Head, Link } from '@inertiajs/vue3';
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class=" bg-white shadow-md p-8 rounded-xl space-y-3">
                            <div class="text-lg">Treinos concluídos / semana</div>
-                            <div class="text-5xl font-bold text-brand-nile-blue-500">3</div>
+                            <div class="text-5xl font-bold text-brand-nile-blue-500"> {{ stats.total_week_trained }} </div>
                         </div>
 
                         <div class=" bg-white shadow-md p-8 rounded-xl space-y-3">
                             <div class="text-lg">Treinos disponíveis</div>
-                            <div class="text-5xl font-bold text-brand-nile-blue-500">5</div>
+                            <div class="text-5xl font-bold text-brand-nile-blue-500"> {{ stats.total_available_trains }} </div>
                         </div>
 
                        <div class=" bg-white shadow-md p-8 rounded-xl space-y-3">
                             <div class="text-lg">Treinos restantes</div>
-                            <div class="text-5xl font-bold text-brand-nile-blue-500">2</div>
+                            <div class="text-5xl font-bold text-brand-nile-blue-500">  {{ stats.total_remaining_trains }} </div>
                         </div>
                     </div>
 
