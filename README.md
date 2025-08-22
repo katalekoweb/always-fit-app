@@ -1,4 +1,4 @@
-# Alays Fit - App
+# Always Fit - App
 Sistema de acompanhamento de treinos e plano nutricional para clientes de ginásios.
 
 ## Tecnologias usadas
