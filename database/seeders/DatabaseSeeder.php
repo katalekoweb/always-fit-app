@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Meal;
+use App\Models\Train;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,5 +25,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Client User',
             'email' => 'client@client.com'
         ]);
+
+        Meal::factory(10)->create();
+        Train::factory(10)->create();
     }
 }
