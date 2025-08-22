@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Train extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'user_id',
         'name',
@@ -51,10 +54,9 @@ class Train extends Model
 
     public function getProgressAttribute()
     {
-        $percent = min(100, (int)(($this->current / $this->goal) * 100));
         if ($this->goal == 0) {
             $percent = 0;
-        } else min(100, (int)(($this->current / $this->goal) * 100));
+        } else $percent = min(100, (int)(($this->current / $this->goal) * 100));
 
         if ($percent < 20) {
             $percent = 20;
