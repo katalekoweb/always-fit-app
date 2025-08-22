@@ -19,6 +19,12 @@ class Train extends Model
         'active'
     ];
 
+    protected $appends = [
+        'formated_start_date',
+        'formated_end_date',
+        'progress'
+    ];
+
     protected $casts = [
         'week_days' => 'array'
     ];
@@ -32,4 +38,29 @@ class Train extends Model
     {
         return $this->hasMany(TrainLog::class);
     }
+
+    public function getFormatedStartDateAttribute()
+    {
+        return date('d/m/Y', strtotime($this->start_date));
+    }
+
+    public function getFormatedEndDateAttribute()
+    {
+        return $this->end_date ? date('d/m/Y', strtotime($this->end_date)) : null;
+    }
+
+    public function getProgressAttribute()
+    {
+        $percent = min(100, (int)(($this->current / $this->goal) * 100));
+        if ($this->goal == 0) {
+            $percent = 0;
+        } else min(100, (int)(($this->current / $this->goal) * 100));
+
+        if ($percent == 0) {
+            $percent = 40;
+        }
+
+        return $percent;
+    }
+
 }

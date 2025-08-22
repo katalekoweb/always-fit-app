@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\MealController;
 use App\Http\Controllers\Admin\TrainController;
+use App\Http\Controllers\Client\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\Admin;
 use Illuminate\Foundation\Application;
@@ -26,6 +27,16 @@ Route::middleware('auth')->group(function () {
 
         Route::resource('trains', TrainController::class);
         Route::resource('meals', MealController::class);
+    });
+
+    Route::prefix('client')->name('client.')->group(function () {
+        // Route::get('/', function () {
+        //     return Inertia::render('Admin/Dashboard');
+        // })->name('dashboard');
+
+        Route::get('/progress', [DashboardController::class, 'progress'])->name('progress');
+        Route::get('/trains', [DashboardController::class, 'trains'])->name('trains');
+        Route::get('/meals', [DashboardController::class, 'meals'])->name('meals');
     });
 
 });
