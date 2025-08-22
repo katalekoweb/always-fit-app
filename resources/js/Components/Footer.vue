@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <footer class=" bg-brand-charade-500 text-white py-10 md:py-28">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-4 md:px-10">
+    <footer class=" bg-brand-charade-500 text-white">
+        <div class="container mx-auto px-4 md:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8  py-10 md:py-28">
 
                 <div>
                     <img src="/assets/images/square-logo.png" alt="">
@@ -66,6 +66,9 @@
                     </div>
                 </div>
 
+            </div>
+            <div class="border-t border-brand-charade-200 py-3 text-lg text-center">
+                &copy; 2025 Always Fit
             </div>
         </div>
     </footer>
