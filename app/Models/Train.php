@@ -22,7 +22,7 @@ class Train extends Model
     protected $appends = [
         'formated_start_date',
         'formated_end_date',
-        'progress'
+        'progress', 'trained_today'
     ];
 
     protected $casts = [
@@ -56,11 +56,17 @@ class Train extends Model
             $percent = 0;
         } else min(100, (int)(($this->current / $this->goal) * 100));
 
-        if ($percent == 0) {
-            $percent = 40;
+        if ($percent < 20) {
+            $percent = 20;
         }
 
         return $percent;
+    }
+
+    public function getTrainedTodayAttribute()
+    {
+        $today = date('Y-m-d');
+        return $this->logs()->whereDate('created_at', $today)->exists();
     }
 
 }

@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/progress', [DashboardController::class, 'progress'])->name('progress');
         Route::get('/trains', [DashboardController::class, 'trains'])->name('trains');
         Route::get('/meals', [DashboardController::class, 'meals'])->name('meals');
+        Route::post('/trains/{trainId}/save', [DashboardController::class, 'saveTrain'])->name('trains.save');
     });
 
 });
