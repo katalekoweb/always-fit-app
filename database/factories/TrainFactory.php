@@ -24,6 +24,7 @@ class TrainFactory extends Factory
             "every_day" => 1,
             "active" => 1,
             "user_id" => 2,
+            "goal" => rand(5, 50),
         ];
     }
 }
