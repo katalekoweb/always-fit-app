@@ -4,7 +4,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
-    trains: {
+    meals: {
         type: Object,
         default: () => ({})
     }
@@ -13,9 +13,9 @@ const props = defineProps({
 const form = useForm({id: null});
 const deleteRecord = (id) => {
     if (confirm('Tem certeza que deseja excluir este treino?')) {
-        form.delete(route('admin.trains.destroy', id), {
+        form.delete(route('admin.meals.destroy', id), {
             onSuccess: () => {
-                alert('Treino excluído com sucesso.');
+                alert('Refição excluída com sucesso.');
                 location.reload();
             }
         });
@@ -26,12 +26,12 @@ const deleteRecord = (id) => {
 
 <template>
 
-    <Head title="Cadastro de Treinos" />
+    <Head title="Refeições" />
 
     <AuthenticatedLayout>
         <template #header>
             <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                Cadastro de Treinos
+                Refeições
             </h2>
         </template>
 
@@ -40,7 +40,7 @@ const deleteRecord = (id) => {
 
                 <div class="flex items-center justify-end mb-3">
                     <Link class="px-4 py-2 bg-brand-nile-blue-500 text-white rounded-lg shadow-md"
-                        :href="route('admin.trains.create')">Novo Treino</Link>
+                        :href="route('admin.meals.create')">Nova refeição</Link>
                 </div>
 
                 <div class="w-full overflow-x-auto">
@@ -50,26 +50,22 @@ const deleteRecord = (id) => {
                                 <th>#ID</th>
                                 <th>Cliente</th>
                                 <th>Nome</th>
-                                <th>Meta</th>
-                                <th>Andamento</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-if="props.trains.data.length == 0">
-                                <td colspan="6" class="text-center p-4">Nenhum treino encontrado.</td>
+                            <tr v-if="props.meals.data.length == 0">
+                                <td colspan="4" class="text-center p-4">Nenhuma refeição encontrada.</td>
                             </tr>
-                            <tr v-for="(train, index) in trains.data" :key="index" class="border-t">
-                                <td class="p-4">{{ train.id }}</td>
-                                <td class="p-4">{{ train.user?.name }}</td>
-                                <td class="p-4">{{ train.name }}</td>
-                                <td class="p-4">{{ train.goal }}</td>
-                                <td class="p-4">{{ train.current }}</td>
+                            <tr v-for="(meal, index) in meals.data" :key="index" class="border-t">
+                                <td class="p-4">{{ meal.id }}</td>
+                                <td class="p-4">{{ meal.user?.name }}</td>
+                                <td class="p-4">{{ meal.name }}</td>
                                 <td class="p-4 text-right space-x-2 flex items-center">
-                                    <Link :href="route('admin.trains.edit', train.id)"
+                                    <Link :href="route('admin.meals.edit', meal.id)"
                                         class=" text-brand-nile-blue-400 hover:underline">
                                     Editar</Link>
-                                    <PrimaryButton @click="deleteRecord(train.id)">Excluir</PrimaryButton>
+                                    <PrimaryButton @click="deleteRecord(meal.id)">Excluir</PrimaryButton>
                                 </td>
                             </tr>
                         </tbody>

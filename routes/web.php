@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MealController;
 use App\Http\Controllers\Admin\TrainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\Admin;
@@ -22,8 +23,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/', function () {
             return Inertia::render('Admin/Dashboard');
         })->name('dashboard');
-        
+
         Route::resource('trains', TrainController::class);
+        Route::resource('meals', MealController::class);
     });
 
 });
