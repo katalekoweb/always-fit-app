@@ -5,7 +5,7 @@
 <template>
     <footer class=" bg-brand-charade-500 text-white py-10 md:py-28">
         <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-4 md:px-10">
 
                 <div>
                     <img src="/assets/images/square-logo.png" alt="">
