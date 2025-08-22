@@ -19,7 +19,7 @@ import DropdownLink from './DropdownLink.vue';
     </div>
 
     <!-- Page Heading -->
-    <header class="w-full bg-white border border-gray-400">
+    <header v-if="$page.props.auth.user" class="w-full bg-white border border-gray-400">
         <div class="container mx-auto flex items-center justify-between py-4 md:py-6 px-4 md:px-10">
             <div>
                 <Link :href="route('dashboard')">
